@@ -1,0 +1,35 @@
+<form nz-form [formGroup]="validateForm" (submit)="getServiceByName()">
+  <input type="text" formControlName="service"  placeholder="enter name"/>
+  <button [disabled]="validateForm.invalid">Search</button>
+</form>
+<div class="bg">
+  <div style="margin-top: 10px" class="child" *ngFor="let serv of services">
+    <div nz-row>
+
+      <div nz-col nzspan="16">
+        <img [src]="updateImg(serv.returnedImg)" style="height: 150px;width: 130px;"/>
+      </div>
+      <div nz-col nzspan="16">
+        <h2 style="cursor: pointer; color: #108ee9">{{serv.serviceName}}</h2>
+
+        <hr />
+
+        <h5></h5>
+
+        <h5>Price : <b>{{serv.price}}</b> Description: <b>{{serv.description}}</b></h5>
+        <hr />
+
+        <div style="float: right">
+          <button
+            nzSize="small"
+            nz-button
+            nzType="primary"
+            routerLink="/client/service/{{serv.id}}"
+          >
+            View
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

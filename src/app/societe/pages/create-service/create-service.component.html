@@ -1,0 +1,20 @@
+<div style="background-color: aliceblue">
+  <div class="parent">
+    <div class="child">
+      <div class="imgDiv">
+        <h2 style="margin-left: 230px">Create Service</h2>
+      </div>
+      <form nz-form (ngSubmit)="postService()" [formGroup]="validateForm">
+        <div nz-row>
+          <div nz-col>
+            <div class="profile-badge">
+              <label class="upload" *ngIf="selectedFile">
+                <img [src]="imagePreview" alt="profile" class="profile"/>
+              </label>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

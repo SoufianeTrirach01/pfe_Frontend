@@ -1,0 +1,71 @@
+<div style="background-color: aliceblue">
+  <div class="parent">
+    <div class="child">
+      <div class="imgDiv">
+        <h2 style="margin-left: 230px">Create Service</h2>
+      </div>
+      <form nz-form (ngSubmit)="postService()" [formGroup]="validateForm">
+        <div nz-row>
+          <div nz-col [nzMd]="24" [nzXs]="24">
+            <div class="profile-badge">
+              <label class="upload" *ngIf="selectedFile">
+                <img [src]="imagePreview" alt="profile" class="profile" />
+              </label>
+              <input
+                type="file"
+                nz-button
+                nzType="primary"
+                accept="image/x-png,image/gif,image/jpeg"
+                (change)="onFileSelected($event)"
+
+              />
+              <button nz-button nzShape="circle"></button>
+            </div>
+          </div>
+
+          <div nz-col nzSpan="24">
+            <nz-form-item>
+
+              <nz-form-control nzHasFeedback nzErrorTip="this input is required">
+                <input
+                nz-input
+                  placeholder="serviceName"
+                  nzType="primary"
+                  formControlName="serviceName"
+                />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+
+          <div nz-col nzSpan="24">
+            <nz-form-item>
+              <nz-form-control nzHasFeedback  nzErrorTip="this input is required">
+                <input
+                  nz-input
+                  formControlName="price"
+                  placeholder="price"
+                  nzErrorType="this input is required"
+                />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+
+          <div nz-col nzSpan="24">
+            <nz-form-item>
+              <nz-form-control nzHasFeedback  nzErrorTip="this input is required">
+                <input
+                  nz-input
+                  nzType="primary"
+                  placeholder="description"
+                  formControlName="description"
+                  nzErrorType="this input is required"
+                />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <button nz-button [nzType]="'primary'">Ajouter</button>
+      </form>
+    </div>
+  </div>
+</div>

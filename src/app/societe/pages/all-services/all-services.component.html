@@ -1,0 +1,36 @@
+<div class="bg">
+  <div style="margin-top: 10px" class="child" *ngFor="let serv of services">
+    <div nz-row>
+      <div nz-col nzSpan="8">
+        <img
+          class="profile"
+          [src]="updateImg(serv.returnedImg)"
+          style="height: 130px; width: 200px; border-radius: 10px"
+        />
+      </div>
+
+      <div nz-col nzspan="16">
+        <h2 style="cursor: pointer; color: #108ee9">{{serv.serviceName}}</h2>
+
+        <hr />
+
+        <h5></h5>
+
+        <h5>Price : <b>{{serv.price}}</b> Description: <b>{{serv.description}}</b></h5>
+        <hr />
+
+        <div style="float: right">
+          <button
+            nzSize="small"
+            nz-button
+            nzType="primary"
+            routerLink="/company/service/{{serv.id}}"
+          >
+            Update
+          </button>
+          I <button nzSize="small" nzDanger (click)="deleteService(serv.id)" nz-button nzType="primary">Delete</button> I
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
